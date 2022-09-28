@@ -21,4 +21,22 @@ export const GET_DETAILS = gql`
       }
 `
 
+export const GET_MEETING_ROOMS=gql`
+{
+    MeetingRooms {
+    name
+    floor
+    building {
+    name
+    }
+    meetings {
+    title,
+      startTime,
+      endTime,
+      date
+    }
+    }
+    }
+`
+
 

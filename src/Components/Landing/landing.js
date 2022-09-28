@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { GET_DETAILS } from '../../Utilities/gqlQueries';
 import classes from './landing.module.css'
 import { getCurrentMeetingsAndOccupiedRooms } from '../../Utilities/utils';
+import RoomSelection from './../RoomSelection'
 export const Landing = () => {
     const { loading, error, data } = useQuery(GET_DETAILS);
 
@@ -18,6 +19,7 @@ export const Landing = () => {
 
     return (
         <section className={classes.landingWrapper}>
+            <RoomSelection/>
             <select>
                 {
                     buildings.map(building => <option id={building.id} value={building.name}>
